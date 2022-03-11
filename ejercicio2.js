@@ -12,10 +12,18 @@ console.table("Bienvenidos a Reto N° 2 ");
 const carta = "bici coche balón _playstation bici coche peluche";
 
 function listGifts(letter) {
+  const arr = letter
+    .trim()
+    .replace(/\s+/g, " ")
+    .split(" ")
+    .filter((r) => !r.startsWith("_")); // limpio mi cadena, transformo en array y elimino lo tachado.
+  console.log(arr);
+  const obj = {}; // creo objeto donde quedara el conteo
+  arr.forEach(function(element) {
+    obj[element] = (obj[element] || 0) + 1;
+  });
 
-  const arr = letter.trim().replace(/\s+/g, ' ').split(' ');
-
-  return arr;
+  return obj;
 }
 
 console.log(listGifts(carta));
