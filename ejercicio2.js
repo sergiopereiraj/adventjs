@@ -22,7 +22,6 @@ function listGifts(letter) {
   arr.forEach(function(element) {
     obj[element] = (obj[element] || 0) + 1;
   });
-
   return obj;
 }
 
