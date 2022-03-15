@@ -15,10 +15,11 @@ const letterCinco = "(peluche {) bici"; // -> false
 const letterSeis = "() bici"; // false
 
 // /\([^\{\}\[\]]+\)/
-
+// /[^\(\s\)]+[)$]/;
+const regularExpresion = /\([a-zA-Z\u00C0-\u017F]{2}[a-zA-Z\u00C0-\u017F]*\)/;
+// return regularExpresion.test(letter);
 function isValid(letter) {
   // ¡No dejes que el Grinch gane!
-  const regularExpresion = /[^(.)]/;
   return regularExpresion.test(letter);
 }
 
